@@ -1,0 +1,17 @@
+.home{
+	article.page{
+		max-width:600px;
+		margin:auto;
+	}
+	.featured-work{
+		margin:$gutter * 6 0;
+		& > h2{
+			font-size:1rem;
+			text-transform: uppercase;
+			color:rgba($text-color, .6);
+		}
+	}
+	.home-widgets{
+		margin:6 * $gutter 0;
+	}
+} 

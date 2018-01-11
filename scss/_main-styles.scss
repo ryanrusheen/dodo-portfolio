@@ -1,0 +1,239 @@
+/* ==Main Styles */
+.wrapper{
+	max-width:70em;
+	margin:auto;
+}
+.content {
+	max-width:1000px;
+	margin:auto;
+}
+
+.footer,
+.content,
+.sidebar {
+	padding: $gutter;
+}
+
+a {
+	color: $accent-color;
+	text-decoration: none;
+}
+a:hover,
+a:focus {
+	color: $hover-color;
+	text-decoration: underline;
+}
+/* generic .header */
+
+.header{
+	@include gradient($gradient-1, $gradient-2);
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-attachment:scroll;
+	
+	color:black;
+	padding-top:1px;
+	@include clearfix;
+
+	.wrapper{
+		position: relative;
+	}
+	.logo{
+		max-width:70px;
+		height:auto;
+		float:left;
+		margin:$gutter 0 $gutter $gutter;
+		img{
+			max-width:100%;
+			height:auto;
+		}
+	}
+	
+	h1 {
+		margin:0;
+		padding:2em 0 0 $gutter;
+		font-size:100%;
+	}
+	h2{
+		
+		margin:0;
+		padding:.3em 0 .3em $gutter;
+		font-size:90%;
+	}
+	.site-title a{
+	color:white;
+	}
+	.searchform, .search-form{
+		padding-right:$gutter;
+	}
+
+}//.header
+.social-navigation{
+		display: none;
+	}
+
+
+
+/* ==mobile-first navigation */
+
+.header nav ul,
+.header nav li {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+.header nav .children,
+.header nav .sub-menu
+{
+	display:none;
+
+}
+.header nav a {
+	display: block;
+	padding: .5em;
+	color:black;
+}
+
+.header nav a:hover {
+	background: rgba(0,0,0,.2);
+	text-decoration: none;
+	color:black;
+}
+/*current page indicator*/
+.header nav .current_page_item > a{
+	background-color: rgba($main-color,.4);	
+}
+
+
+
+
+article {
+	margin-bottom: 3em;
+	padding:$gutter;
+}
+
+.entry-content{
+	margin-bottom:1em;
+}
+.postmeta {
+	clear:both;
+	border-top:solid 1px rgba($main-color, .2);
+	padding: .2em;
+	font-size: .85em;
+	color:rgba($text-color, .6);
+	ul, ol, li{
+		list-style-type:none;
+		display: inline-block;
+		margin:0;
+		padding:0;
+	}
+}
+.read-more{
+	@include secondary-action(rgba($main-color, .1));
+	display:inline;
+}
+
+/* featured images on the blog */
+.blog .wp-post-image{
+	float:right;
+	margin:0 0 1em 1em;
+	max-width:50%;
+	height:auto;
+}
+
+
+.content img{
+	max-width: 100%;
+	height:auto;
+}
+/* fix for really wide <div> in the sample data */
+.entry-content > *{
+	max-width: 100%;
+}
+
+.postmeta span:not(:last-child) {
+	border-right: solid 1px #ccc;
+	margin-right: .3em;
+	padding-right: .3em;
+}
+
+.sidebar{
+	color:lighten($text-color, 20);
+	.widget{
+		margin-top:2em;
+	}
+	ul{
+		@include reset;
+		
+	}
+	li{
+		margin-bottom: .3em;
+	}
+}
+
+.crp_related{
+	background-color:rgba(white, .5);
+	padding:$gutter;
+	border-top: solid 1px rgba($main-color, .2);
+	margin:5 * $gutter 0;
+	h3{
+		font-size:1em;
+	}
+	ul{
+		@include reset;
+		@include flexbox;
+		@include flex-just(space-between);
+	}
+
+	.crp_title{
+		display: block;
+	}
+}
+
+.pagination{
+	clear:both;
+	@include flexbox();
+	@include justify-content(space-between);
+	// @include flex-wrap(wrap);
+
+	a, .current{
+		display:block;
+		max-width:49%;
+		@include action($accent-color);
+		padding:$gutter $gutter * 2 ;
+		white-space: normal;
+	}
+	.current{
+		background-color: #FFF;
+		color: text-contrast(#fff);
+	}
+	
+}
+
+/* ==widgets */
+.home-widgets {
+	@include flexbox();
+	@include flex-wrap(wrap);
+	@include justify-content(space-around);
+.widget{
+	width:33%;
+	min-width:300px
+}
+}
+
+
+/* ==footer */
+
+.footer{
+	background-color: rgba($main-color,.1);
+	clear:both;
+}
+.footer-widgets{
+	@include flexbox();
+	@include flex-wrap(wrap);
+	@include justify-content(space-around);
+	.widget{
+		text-align: left;
+		min-width: 300px;
+	}
+}
