@@ -1,5 +1,5 @@
 <?php
-// testing github
+
 //custom image sizes
 //               name  width  height crop?
 add_image_size( 'banner', 900, 200, true );
